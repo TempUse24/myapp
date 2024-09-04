@@ -12,6 +12,7 @@ import { AddHelplineComponent } from './add-helpline/add-helpline.component';
 import { IncidentReportCommonComponent } from './incident-report-common/incident-report-common.component';
 import { IncidentListComponent } from './incident-list/incident-list.component';
 import { IncidentReportAnonymousComponent } from './incident-report-anonymous/incident-report-anonymous.component';
+import { ReliefCampSearchComponent } from './relief-camp-search/relief-camp-search.component';
 const routes: Routes = [
   { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
   { path: 'dashboard', component: DashboardComponent },
@@ -26,6 +27,7 @@ const routes: Routes = [
   { path: 'report', component: IncidentReportCommonComponent },
   { path: 'incidentlist', component: IncidentListComponent },
   { path: 'anonymous-report', component: IncidentReportAnonymousComponent },
+  { path: 'camp-search', component: ReliefCampSearchComponent },
 ];
 
 @NgModule({
