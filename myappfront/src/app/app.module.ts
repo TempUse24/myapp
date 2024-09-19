@@ -31,6 +31,7 @@ import { IncidentListComponent } from './incident-list/incident-list.component';
 import { IncidentReportAnonymousComponent } from './incident-report-anonymous/incident-report-anonymous.component';
 import { ReliefCampSearchComponent } from './relief-camp-search/relief-camp-search.component';
 import { ReliefCampManagerComponent } from './relief-camp-manager/relief-camp-manager.component';
+import { IncidentAnonymousListComponent } from './incident-anonymous-list/incident-anonymous-list.component';
 
 @NgModule({
   declarations: [
@@ -61,6 +62,7 @@ import { ReliefCampManagerComponent } from './relief-camp-manager/relief-camp-ma
     IncidentReportAnonymousComponent,
     ReliefCampSearchComponent,
     ReliefCampManagerComponent,
+    IncidentAnonymousListComponent,
   ],
   imports: [
     BrowserModule,

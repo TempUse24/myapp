@@ -2,9 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import * as L from 'leaflet';
 
 @Component({
-  selector: 'app-map',
+  selector: 'app-live-map',
   templateUrl: './live-map.component.html',
-  styleUrls: ['./live-map.component.css']
+  styleUrls: ['./live-map.component.css'],
 })
 export class LiveMapComponent implements OnInit {
   map!: L.Map;
@@ -21,14 +21,17 @@ export class LiveMapComponent implements OnInit {
 
     // Load and display tile layers on the map
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+      attribution:
+        '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
     }).addTo(this.map);
 
     // Add marker to the user's location
     this.map.on('locationfound', (e: L.LocationEvent) => {
       const radius = e.accuracy;
-      L.marker(e.latlng).addTo(this.map)
-        .bindPopup('You are within ' + radius + ' meters from this point').openPopup();
+      L.marker(e.latlng)
+        .addTo(this.map)
+        .bindPopup('You are within ' + radius + ' meters from this point')
+        .openPopup();
       L.circle(e.latlng, radius).addTo(this.map);
     });
 

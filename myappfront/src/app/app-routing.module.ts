@@ -13,6 +13,8 @@ import { IncidentReportCommonComponent } from './incident-report-common/incident
 import { IncidentListComponent } from './incident-list/incident-list.component';
 import { IncidentReportAnonymousComponent } from './incident-report-anonymous/incident-report-anonymous.component';
 import { ReliefCampSearchComponent } from './relief-camp-search/relief-camp-search.component';
+import { ReliefCampManagerComponent } from './relief-camp-manager/relief-camp-manager.component';
+import { IncidentAnonymousListComponent } from './incident-anonymous-list/incident-anonymous-list.component';
 const routes: Routes = [
   { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
   { path: 'dashboard', component: DashboardComponent },
@@ -28,6 +30,11 @@ const routes: Routes = [
   { path: 'incidentlist', component: IncidentListComponent },
   { path: 'anonymous-report', component: IncidentReportAnonymousComponent },
   { path: 'camp-search', component: ReliefCampSearchComponent },
+  { path: 'camp-manage', component: ReliefCampManagerComponent },
+  {
+    path: 'anonymous-report-analyze',
+    component: IncidentAnonymousListComponent,
+  },
 ];
 
 @NgModule({

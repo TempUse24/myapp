@@ -35,7 +35,7 @@ public class SecurityConfig {
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http.cors().and().csrf().disable()
-                .authorizeRequests()
+                .authorizeHttpRequests()
 .requestMatchers(
                 "auth/greeting", 
                 "api/helplines/setwebsites", 
@@ -68,9 +68,9 @@ public class SecurityConfig {
 public CorsConfigurationSource corsConfigurationSource() {
     CorsConfiguration configuration = new CorsConfiguration();
     configuration.setAllowedOrigins(Arrays.asList("http://localhost:4200")); // Replace with your Angular app's URL
-    configuration.setAllowedMethods(Arrays.asList("GET", "POST", "PUT", "DELETE", "OPTIONS"));
+    configuration.setAllowedMethods(Arrays.asList("GET", "POST", "PUT", "DELETE", "OPTIONS","PATCH"));
 	configuration
-			.setAllowedHeaders(Arrays.asList("Authorization", "Content-Type", "Accept", "X-Requested-With", "Origin"));
+			.setAllowedHeaders(Arrays.asList("Authorization", "Content-Type", "Accept", "X-Requested-With", "Origin","Access-Control-Allow-Origin"));
     configuration.setAllowCredentials(true);  // Allow credentials (cookies, etc.)
     configuration.setExposedHeaders(Arrays.asList("Authorization"));
 	UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();

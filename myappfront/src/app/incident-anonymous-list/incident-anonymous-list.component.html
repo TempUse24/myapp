@@ -1,0 +1,45 @@
+<app-navbar-admin></app-navbar-admin>
+<div class="container">
+  <h2>Incident Reports</h2>
+
+  <table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Type of Incident</th>
+        <th>Description</th>
+        <th>Time of Incident</th>
+        <th>Location</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let report of incidentReports">
+        <td>{{ report.id }}</td>
+        <td>{{ report.typeOfIncident }}</td>
+        <td>{{ report.descriptionOfIncident }}</td>
+        <td>{{ report.timeOfIncident }}</td>
+        <td>{{ report.location }}</td>
+        <td>
+          <button (click)="selectReport(report.id!)">Update</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div *ngIf="selectedReportId !== null">
+    <h3>Update Report ID: {{ selectedReportId }}</h3>
+    <div>
+      <label for="status">New Status:</label>
+      <input type="text" id="status" [(ngModel)]="statusUpdate" />
+      <button (click)="updateStatus()">Update Status</button>
+    </div>
+    <div>
+      <label for="message">New Message:</label>
+      <input type="text" id="message" [(ngModel)]="messageUpdate" />
+      <button (click)="updateMessage()">Update Message</button>
+    </div>
+  </div>
+
+  <div *ngIf="updateSuccess">{{ updateSuccess }}</div>
+</div>
